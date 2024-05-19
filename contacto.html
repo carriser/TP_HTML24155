@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+        <style>
+            /* Estilo para el mensaje de error */
+            .error-message {
+              color: red;
+            }
+          </style>
     </head>
 
     <body>
@@ -26,15 +32,16 @@
             </div>
         </header>
         <main>
-            <form>
+            <form name="MyForm" method="get" id="MyForm">
+            
                 <label for="nombreapellido">Nombre y Apellido</label>
-                <input type="text" id="nombreapellido" class="input-padron" required>
+                <input type="text" id="nombreapellido" name="nombre" class="input-padron" >
 
                 <label for="correoelectronico">Correo Electrónico</label>
-                <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+                <input type="email" id="correoelectronico" class="input-padron" placeholder="email@dominio.com">
 
                 <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" class="input-padron" required placeholder="(XX) XXXX XXXX">
+                <input type="tel" id="telefono" class="input-padron" required ="(XX) XXXX XXXX">
 
                 <label for="mensaje">Mensaje</label>
                 <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
@@ -66,10 +73,12 @@
                 <br>
                 <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura?</label>                
                 
-                <input type="submit" value="Enviar formulario" class="enviar">
+               <input type="submit" onclick="validar()" value="Enviar formulario" class="enviar">
 
             </form>
+            <script src="./validacion.js"></script>
 
+         
             <table>
                 <thead>
                     <tr>
